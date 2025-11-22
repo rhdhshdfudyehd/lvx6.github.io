@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>微信号购买平台推荐</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+			}
+
+			body {
+				background-color: #f5f7fa;
+				color: #333;
+				line-height: 1.6;
+				padding: 20px;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			header {
+				text-align: center;
+				margin-bottom: 40px;
+				padding: 20px 0;
+			}
+
+			h1 {
+				color: #1a73e8;
+				margin-bottom: 10px;
+				font-size: 32px;
+			}
+
+			.subtitle {
+				color: #666;
+				font-size: 16px;
+			}
+
+			.filter-section {
+				background: white;
+				border-radius: 10px;
+				padding: 20px;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+				margin-bottom: 30px;
+			}
+
+			.filter-title {
+				font-size: 18px;
+				margin-bottom: 15px;
+				color: #444;
+			}
+
+			.filter-options {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+			}
+
+			.filter-btn {
+				padding: 8px 16px;
+				background: #f0f4f8;
+				border: none;
+				border-radius: 20px;
+				cursor: pointer;
+				transition: all 0.3s;
+			}
+
+			.filter-btn:hover {
+				background: #e1e8f0;
+			}
+
+			.filter-btn.active {
+				background: #1a73e8;
+				color: white;
+			}
+
+			.platform-section {
+				margin-bottom: 40px;
+			}
+
+			.platform-card {
+				background: white;
+				border-radius: 10px;
+				overflow: hidden;
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+			}
+
+			.platform-header {
+				background: #1a73e8;
+				color: white;
+				padding: 15px 20px;
+			}
+
+			.platform-name {
+				color: white;
+				font-size: 22px;
+				margin-bottom: 5px;
+				text-decoration: none;
+			}
+
+			.platform-desc {
+				font-size: 14px;
+				opacity: 0.9;
+				margin-bottom: 10px;
+			}
+
+			.platform-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+			}
+
+			.tag-link {
+				display: inline-block;
+				padding: 4px 12px;
+				background: rgba(255, 255, 255, 0.2);
+				color: white;
+				text-decoration: none;
+				border-radius: 12px;
+				font-size: 12px;
+				transition: all 0.3s;
+			}
+
+			.tag-link:hover {
+				background: rgba(255, 255, 255, 0.3);
+				transform: translateY(-2px);
+			}
+
+			.products-table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			.product-row {
+				border-bottom: 1px solid #eaeaea;
+				transition: background-color 0.2s;
+			}
+
+			.product-row:hover {
+				background-color: #f9fafb;
+			}
+
+			.product-row:last-child {
+				border-bottom: none;
+			}
+
+			.product-title,
+			.product-price,
+			.product-action {
+				padding: 15px 20px;
+			}
+
+			.product-title {
+				font-weight: 500;
+				width: 65%;
+			}
+
+			.product-price {
+				color: #e53935;
+				font-weight: bold;
+				width: 20%;
+				text-align: center;
+			}
+
+			.product-action {
+				width: 40%;
+				text-align: right;
+			}
+
+			.buy-btn {
+				display: inline-block;
+				padding: 8px 20px;
+				background: #1a73e8;
+				color: white;
+				text-align: center;
+				text-decoration: none;
+				border-radius: 5px;
+				transition: background 0.3s;
+				font-size: 14px;
+			}
+
+			.buy-btn:hover {
+				background: #0d62d9;
+			}
+
+			footer {
+				text-align: center;
+				margin-top: 50px;
+				padding: 20px;
+				color: #666;
+				font-size: 14px;
+				border-top: 1px solid #eaeaea;
+			}
+
+			@media (max-width: 768px) {
+
+				.product-title,
+				.product-price,
+				.product-action {
+					padding: 12px 15px;
+				}
+
+				.buy-btn {
+					padding: 6px 15px;
+					font-size: 13px;
+				}
+
+				.platform-tags {
+					gap: 5px;
+				}
+
+				.tag-link {
+					padding: 3px 10px;
+					font-size: 11px;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.products-table {
+					display: block;
+				}
+
+				.product-row {
+					display: flex;
+					flex-direction: column;
+					padding: 15px;
+				}
+
+				.product-title,
+				.product-price,
+				.product-action {
+					width: 100%;
+					text-align: left;
+					padding: 5px 0;
+				}
+
+				.product-action {
+					text-align: left;
+					padding-top: 10px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>微信号购买平台推荐</h1>
+				<p class="subtitle">精选5大可靠平台，安全购买微信号</p>
+			</header>
+
+			<section class="filter-section">
+				<h2 class="filter-title">平台筛选</h2>
+				<div class="filter-options">
+					<button class="filter-btn active" data-wid="0">全部平台</button>
+					<button class="filter-btn" data-wid="1">微信账号交易平台</button>
+					<button class="filter-btn" data-wid="2">52淘卡</button>
+					<button class="filter-btn" data-wid="3">翼哇小号</button>
+					<button class="filter-btn" data-wid="4">克罗批发</button>
+					<button class="filter-btn" data-wid="5">杰苏小号</button>
+				</div>
+			</section>
+
+			<section class="platform-section wid-1">
+				<div class="platform-card">
+					<div class="platform-header">
+						<h2><a href="https://www.weixinh.com" class="platform-name" target="_blank">微信账号交易平台</a></h2>
+						<p class="platform-desc">微信账号交易平台 - 专业的微信号买卖平台 | 个人号企业号服务号出售</p>
+						<div class="platform-tags">
+							<a href="https://www.weixinh.com" class="tag-link">微信号购买</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信小号</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信号批发</a>
+							<a href="https://www.weixinh.com" class="tag-link">买微信号</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信号出售</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信号交易平台</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信号平台</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信号购买自动发货</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信账号购买平台</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信号购买telegram</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信小号购买自动发货</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信号购买微信支付</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信小号自助购买</a>
+							<a href="https://www.weixinh.com" class="tag-link">海外微信号购买</a>
+							<a href="https://www.weixinh.com" class="tag-link">国内微信号购买</a>
+							<a href="https://www.weixinh.com" class="tag-link">实名微信号购买</a>
+							<a href="https://www.weixinh.com" class="tag-link">香港微信号购买</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信号购买平台</a>
+							<a href="https://www.weixinh.com" class="tag-link">微信小号购买</a>
+							<a href="https://www.weixinh.com" class="tag-link">未实名微信号购买</a>
+						</div>
+					</div>
+					<table class="products-table">
+						<tr class="product-row">
+							<td class="product-title">实名微信满月号一组5个 24H在线自助购买</td>
+							<td class="product-price">$15.50</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/实名微信满月号一组5个 24H在线自助购买.html" class="buy-btn"
+									target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">微信小号三个月已实名 无限制加群加好友 功能无限制</td>
+							<td class="product-price">$11.12</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/微信小号三个月已实名 无限制加群加好友 功能无限制.html" class="buy-btn"
+									target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">微信半年已实名老号 1000额度 可加好友进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/微信半年已实名老号 1000额度 可加好友进大群.html" class="buy-btn"
+									target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">实名1年以上微信老号 可加好友进大群无风控 功能全无限制</td>
+							<td class="product-price">$22.34</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/实名1年以上微信老号 可加好友进大群无风控 功能全无限制.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">实名2年高权重微信老号 无限制加群加好友 功能无限制</td>
+							<td class="product-price">$27.65</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/实名2年高权重微信老号 无限制加群加好友 功能无限制.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">马来西亚微信小号批发 满月实名 额度1000 跨境收款无忧</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/马来西亚微信小号批发 满月实名 额度1000 跨境收款无忧.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">批发已实名绑卡马来西亚wechat账号 支持转账收款进大群 一年以上老号批发</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/批发已实名绑卡马来西亚wechat账号 支持转账收款进大群 一年以上老号批发.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">马来西亚两年微信号批发 老号带资料 可加好友进大群 在线自助购买</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/马来西亚两年微信号批发 老号带资料 可加好友进大群 在线自助购买.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港微信小号批发 满月实名 额度1000 跨境收款无忧</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/香港微信小号批发 满月实名 额度1000 跨境收款无忧.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">批发已实名绑卡香港wechat账号 支持转账收款进大群 一年以上老号批发</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/批发已实名绑卡香港wechat账号 支持转账收款进大群 一年以上老号批发.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港两年微信号平台 微信老号稳定不异常账号 可收付款转账发红包 自动发货</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/香港两年微信号平台 微信老号稳定不异常账号 可收付款转账发红包 自动发货.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">菲律宾微信小号批发 满月实名 额度1000 跨境收款无忧</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/菲律宾微信小号批发 满月实名 额度1000 跨境收款无忧.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">批发已实名绑卡菲律宾wechat账号 支持转账收款进大群 一年以上老号批发</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/批发已实名绑卡菲律宾wechat账号 支持转账收款进大群 一年以上老号批发.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">购买菲律宾两年微信号 已实名带圈带账单 抗封抗投诉 微信号交易平台</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/购买菲律宾两年微信号 已实名带圈带账单 抗封抗投诉 微信号交易平台.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">美国微信小号批发 满月实名 额度1000 跨境收款无忧</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/美国微信小号批发 满月实名 额度1000 跨境收款无忧.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">批发已实名绑卡美国wechat账号 支持转账收款进大群 一年以上老号批发</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/批发已实名绑卡美国wechat账号 支持转账收款进大群 一年以上老号批发.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">美国两年微信小号购买 微信老号带资料 抗封抗投诉 24H在线自助发货</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/美国两年微信小号购买 微信老号带资料 抗封抗投诉 24H在线自助发货.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新加坡微信小号批发 满月实名 额度1000 跨境收款无忧</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/新加坡微信小号批发 满月实名 额度1000 跨境收款无忧.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">批发已实名绑卡新加坡wechat账号 支持转账收款进大群 一年以上老号批发</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/批发已实名绑卡新加坡wechat账号 支持转账收款进大群 一年以上老号批发.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新加坡两年微信小号 稳定耐用账号出售 已绑卡可收付款 自动发货平台</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/新加坡两年微信小号 稳定耐用账号出售 已绑卡可收付款 自动发货平台.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">泰国微信小号批发 满月实名 额度1000 跨境收款无忧</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/泰国微信小号批发 满月实名 额度1000 跨境收款无忧.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">批发已实名绑卡泰国wechat账号 支持转账收款进大群 一年以上老号批发</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/批发已实名绑卡泰国wechat账号 支持转账收款进大群 一年以上老号批发.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">泰国两年实名微信号购买 稳定不异常账号 已绑卡已实名 微信号批发</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/泰国两年实名微信号购买 稳定不异常账号 已绑卡已实名 微信号批发.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">澳门微信新号满月特供 24小时秒发 自动发货</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/澳门微信新号满月特供 24小时秒发 自动发货.html" class="buy-btn"
+									target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">批发已实名绑卡澳门wechat账号 支持转账收款进大群 一年以上老号批发</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/批发已实名绑卡澳门wechat账号 支持转账收款进大群 一年以上老号批发.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">澳门两年实名微信号购买 抗封抗投诉微信老号批发 24H自助发货</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/澳门两年实名微信号购买 抗封抗投诉微信老号批发 24H自助发货.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">柬埔寨微信小号批发 满月实名 额度1000 跨境收款无忧</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/柬埔寨微信小号批发 满月实名 额度1000 跨境收款无忧.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">批发已实名绑卡柬埔寨wechat账号 支持转账收款进大群 一年以上老号批发</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/批发已实名绑卡柬埔寨wechat账号 支持转账收款进大群 一年以上老号批发.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">柬埔寨两年微信号批发 已实名带资料 带圈带账单 自动发货平台</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/柬埔寨两年微信号批发 已实名带资料 带圈带账单 自动发货平台.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">已实名认证微信老号 三年稳定使用 无限加人进群无限制</td>
+							<td class="product-price">$40.22</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/已实名认证微信老号 三年稳定使用 无限加人进群无限制.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">私人微信1年成品号购买 实名认证 已绑卡支付功能齐全 带历史账单</td>
+							<td class="product-price">$36.31</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/私人微信1年成品号购买 实名认证 已绑卡支付功能齐全 带历史账单.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">私人微信2年成品号购买 实名认证 已绑卡支付功能齐全 带历史账单</td>
+							<td class="product-price">$62.84</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/私人微信2年成品号购买 实名认证 已绑卡支付功能齐全 带历史账单.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">高权重实名绑卡微信3年老号 含5000女性好友资源 带朋友圈账单</td>
+							<td class="product-price">$83.79</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/高权重实名绑卡微信3年老号 含5000女性好友资源 带朋友圈账单.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">高权重实名绑卡微信3年老号 含5000男性好友资源 带朋友圈账单</td>
+							<td class="product-price">$83.79</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/高权重实名绑卡微信3年老号 含5000男性好友资源 带朋友圈账单.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">5年未实名老微信账号 4000+高质量好友 稳定耐用</td>
+							<td class="product-price">$139.66</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/5年未实名老微信账号 4000 高质量好友 稳定耐用.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">5年未实名优质微信老号 4000女性好友 防封耐用 稳定安全</td>
+							<td class="product-price">$139.66</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/5年未实名优质微信老号 4000女性好友 防封耐用 稳定安全.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">加拿大两年微信号出售 稳定耐用已实名 可加好友进大群 买微信号平台</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/加拿大两年微信号出售 稳定耐用已实名 可加好友进大群 买微信号平台.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">澳大利亚两年微信号购买 老号抗投诉 可收付款发红包 微信号交易平台</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/澳大利亚两年微信号购买 老号抗投诉 可收付款发红包 微信号交易平台.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新西兰两年实名微信小号 稳定不异常账号 已绑卡已实名 批发自动发货</td>
+							<td class="product-price">$35.89</td>
+							<td class="product-action"><a
+									href="https://www.weixinh.com/detail/新西兰两年实名微信小号 稳定不异常账号 已绑卡已实名 批发自动发货.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<section class="platform-section wid-2">
+				<div class="platform-card">
+					<div class="platform-header">
+						<h2><a href="https://www.52taoka.com" class="platform-name" target="_blank">52淘卡</a></h2>
+						<p class="platform-desc">微信号购买_微信小号出售批发_实名微信号购买平台-52淘卡</p>
+						<div class="platform-tags">
+							<a href="https://www.52taoka.com" class="tag-link">微信号购买</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信小号</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信号批发</a>
+							<a href="https://www.52taoka.com" class="tag-link">买微信号</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信号出售</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信号交易平台</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信号平台</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信号购买自动发货</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信账号购买平台</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信号购买telegram</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信小号购买自动发货</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信号购买微信支付</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信小号自助购买</a>
+							<a href="https://www.52taoka.com" class="tag-link">海外微信号购买</a>
+							<a href="https://www.52taoka.com" class="tag-link">国内微信号购买</a>
+							<a href="https://www.52taoka.com" class="tag-link">实名微信号购买</a>
+							<a href="https://www.52taoka.com" class="tag-link">香港微信号购买</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信号购买平台</a>
+							<a href="https://www.52taoka.com" class="tag-link">微信小号购买</a>
+							<a href="https://www.52taoka.com" class="tag-link">未实名微信号购买</a>
+						</div>
+					</div>
+					<table class="products-table">
+						<tr class="product-row">
+							<td class="product-title">微信号购买自动发货 | 满月微信号出售 | 已实名可支付 | 稳定不异常</td>
+							<td class="product-price">$11.32</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/wei-xin-hao-gou-mai-zi-dong-fa-huo-man-yue-wei-xin-hao-chu-shou-yi-shi-ming-ke-zhi-fu-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">微信小号购买 | 三月微信号出售 | 已实名可支付 | 稳定抗投诉 | 自动发货</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/wei-xin-xiao-hao-gou-mai-san-yue-wei-xin-hao-chu-shou-yi-shi-ming-ke-zhi-fu-wen-ding-kang-tou-su-zi-dong-fa-huo.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">微信号购买 半年老号 | 已实名超高权重 | 带支付带资料 | 稳定抗投诉</td>
+							<td class="product-price">$15.88</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/wei-xin-hao-gou-mai-ban-nian-lao-hao-yi-shi-ming-chao-gao-quan-zhong-dai-zhi-fu-dai-zi-liao-wen-ding-kang-tou-su.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">一年微信号批发 | 已实名超高权重 | 带支付带资料 | 绝对抗投诉</td>
+							<td class="product-price">$22.86</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/yi-nian-wei-xin-hao-pi-fa-yi-shi-ming-chao-gao-quan-zhong-dai-zhi-fu-dai-zi-liao-jue-dui-kang-tou-su.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">两年微信号出售 已实名 超高权重 带支付带资料 绝对抗投诉</td>
+							<td class="product-price">$35.91</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/liang-nian-wei-xin-hao-chu-shou-yi-shi-ming-chao-gao-quan-zhong-dai-zhi-fu-dai-zi-liao-jue-dui-kang-tou-su.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">三年实名微信号购买 | 微信老号批发 | 终极抗封 | 带资料可支付</td>
+							<td class="product-price">$40.15</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/san-nian-shi-ming-wei-xin-hao-gou-mai-wei-xin-lao-hao-pi-fa-zhong-ji-kang-feng-dai-zi-liao-ke-zhi-fu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港满月微信号出售 | 本地手机号注册 | 港币支付功能 | 活跃朋友圈 | 即买即用</td>
+							<td class="product-price">$13.35</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/xiang-gang-man-yue-wei-xin-hao-chu-shou-ben-di-shou-ji-hao-zhu-ce-gang-bi-zhi-fu-gong-neng-huo-yue-peng-you-quan-ji-mai-ji-yong.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港一年老号批发 | 超高权重微信号 | 实名认证 | 带港币钱包 | 绝对稳定</td>
+							<td class="product-price">$30.66</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/xiang-gang-yi-nian-lao-hao-pi-fa-chao-gao-quan-zhong-wei-xin-hao-shi-ming-ren-zheng-dai-gang-bi-qian-bao-jue-dui-wen-ding.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港两年微信号购买 | 骨灰级老号 | 实名认证 | 超高权重 | 终极抗封</td>
+							<td class="product-price">$36.86</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/xiang-gang-liang-nian-wei-xin-hao-gou-mai-gu-hui-ji-lao-hao-shi-ming-ren-zheng-chao-gao-quan-zhong-zhong-ji-kang-feng.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">越南满月微信号出售 | 越南手机号注册 | 支持越南盾 | 基础功能完整 | 自动发货</td>
+							<td class="product-price">$13.35</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/yue-nan-man-yue-wei-xin-hao-chu-shou-yue-nan-shou-ji-hao-zhu-ce-zhi-chi-yue-nan-dun-ji-chu-gong-neng-wan-zheng-zi-dong-fa-huo.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title"> 越南一年微信号批发 | 稳定老号 | 越南盾支付 | 实名认证 | 抗投诉封号</td>
+							<td class="product-price">$30.66</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/yue-nan-yi-nian-wei-xin-hao-pi-fa-wen-ding-lao-hao-yue-nan-dun-zhi-fu-shi-ming-ren-zheng-kang-tou-su-feng-hao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">越南两年微信号购买 | 极品老号 | 超高权重 | 完整支付功能 | 终极稳定</td>
+							<td class="product-price">$36.86</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/yue-nan-liang-nian-wei-xin-hao-gou-mai-ji-pin-lao-hao-chao-gao-quan-zhong-wan-zheng-zhi-fu-gong-neng-zhong-ji-wen-ding.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">缅甸满月微信号出售 | 本地注册 | 基础功能 | 缅甸语资料 | 稳定可用</td>
+							<td class="product-price">$13.35</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/mian-dian-man-yue-wei-xin-hao-chu-shou-ben-di-zhu-ce-ji-chu-gong-neng-mian-dian-yu-zi-liao-wen-ding-ke-yong.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">缅甸一年微信号批发 | 稳定老号 | 实名认证 | 完整功能 | 抗投诉</td>
+							<td class="product-price">$30.66</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/mian-dian-yi-nian-wei-xin-hao-pi-fa-wen-ding-lao-hao-shi-ming-ren-zheng-wan-zheng-gong-neng-kang-tou-su.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月红标企业微信号购买 带资料抗封耐用 持批发自动发货</td>
+							<td class="product-price">$17.48</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/man-yue-hong-biao-qi-ye-wei-xin-hao-gou-mai-dai-zi-liao-kang-feng-nai-yong-chi-pi-fa-zi-dong-fa-huo.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">半年红标老号企业微信号出售 强力抗投诉 带资料账单 批发自动发</td>
+							<td class="product-price">$23.07</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/ban-nian-hong-biao-lao-hao-qi-ye-wei-xin-hao-chu-shou-qiang-li-kang-tou-su-dai-zi-liao-zhang-dan-pi-fa-zi-dong-fa.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">一年红标实名老号微信购买 终极抗封 带账单资料 顶级权重</td>
+							<td class="product-price">$27.30</td>
+							<td class="product-action"><a
+									href="https://www.52taoka.com/detail/yi-nian-hong-biao-shi-ming-lao-hao-wei-xin-gou-mai-zhong-ji-kang-feng-dai-zhang-dan-zi-liao-ding-ji-quan-zhong.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<section class="platform-section wid-3">
+				<div class="platform-card">
+					<div class="platform-header">
+						<h2><a href="https://www.iwa21.com" class="platform-name" target="_blank">翼哇小号</a></h2>
+						<p class="platform-desc">长期提供微信号购买服务，买微信号必选的微信号批发供应商-翼哇小号</p>
+						<div class="platform-tags">
+							<a href="https://www.iwa21.com" class="tag-link">微信号购买</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信小号</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信号批发</a>
+							<a href="https://www.iwa21.com" class="tag-link">买微信号</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信号出售</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信号交易平台</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信号平台</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信号购买自动发货</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信账号购买平台</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信号购买telegram</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信小号购买自动发货</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信号购买微信支付</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信小号自助购买</a>
+							<a href="https://www.iwa21.com" class="tag-link">海外微信号购买</a>
+							<a href="https://www.iwa21.com" class="tag-link">国内微信号购买</a>
+							<a href="https://www.iwa21.com" class="tag-link">实名微信号购买</a>
+							<a href="https://www.iwa21.com" class="tag-link">香港微信号购买</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信号购买平台</a>
+							<a href="https://www.iwa21.com" class="tag-link">微信小号购买</a>
+							<a href="https://www.iwa21.com" class="tag-link">未实名微信号购买</a>
+						</div>
+					</div>
+					<table class="products-table">
+						<tr class="product-row">
+							<td class="product-title">满月香港微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-xiang-gang-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/xiang-gang-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港两年微信号出售 已实名 稳定耐用 抗封号 支持支付 带资料</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/xiang-gang-liang-nian-wei-xin-hao-chu-shou-yi-shi-ming-wen-ding-nai-yong-kang-feng-hao-zhi-chi-zhi-fu-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月越南微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-yue-nan-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">越南一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/yue-nan-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">越南两年微信号批发 已实名 超高权重 抗投诉 支持支付</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/yue-nan-liang-nian-wei-xin-hao-pi-fa-yi-shi-ming-chao-gao-quan-zhong-kang-tou-su-zhi-chi-zhi-fu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月马来西亚微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-ma-lai-xi-ya-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">马来西亚一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/ma-lai-xi-ya-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">马来西亚两年微信号出售 已实名 稳定耐用 支持令吉支付 抗封号</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/ma-lai-xi-ya-liang-nian-wei-xin-hao-chu-shou-yi-shi-ming-wen-ding-nai-yong-zhi-chi-ling-ji-zhi-fu-kang-feng-hao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月新加坡微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-xin-jia-po-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新加坡一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/xin-jia-po-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新加坡两年微信号批发 已实名 超高权重 抗投诉 支持新元支付</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/xin-jia-po-liang-nian-wei-xin-hao-pi-fa-yi-shi-ming-chao-gao-quan-zhong-kang-tou-su-zhi-chi-xin-yuan-zhi-fu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月美国微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-mei-guo-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">美国一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/mei-guo-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">美国两年微信号出售 已实名 稳定耐用 抗封号 支持美元支付 带资料</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/mei-guo-liang-nian-wei-xin-hao-chu-shou-yi-shi-ming-wen-ding-nai-yong-kang-feng-hao-zhi-chi-mei-yuan-zhi-fu-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月加拿大微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-jia-na-da-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">加拿大一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/jia-na-da-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">加拿大两年微信号批发 已实名 超高权重 抗投诉 支持加元支付</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/jia-na-da-liang-nian-wei-xin-hao-pi-fa-yi-shi-ming-chao-gao-quan-zhong-kang-tou-su-zhi-chi-jia-yuan-zhi-fu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月泰国微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-tai-guo-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">泰国一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/tai-guo-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">泰国两年微信号批发 已实名 超高权重 抗投诉 泰语界面 支持支付</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/tai-guo-liang-nian-wei-xin-hao-pi-fa-yi-shi-ming-chao-gao-quan-zhong-kang-tou-su-tai-yu-jie-mian-zhi-chi-zhi-fu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月菲律宾微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-fei-lyu-bin-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">菲律宾一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/fei-lyu-bin-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">菲律宾两年微信号出售 已实名 稳定耐用 抗封号 支持比索支付</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/fei-lyu-bin-liang-nian-wei-xin-hao-chu-shou-yi-shi-ming-wen-ding-nai-yong-kang-feng-hao-zhi-chi-bi-suo-zhi-fu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月柬埔寨微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-jian-pu-zhai-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">柬埔寨一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/jian-pu-zhai-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">柬埔寨两年微信号批发 已实名 超高权重 抗投诉 支持瑞尔支付</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/jian-pu-zhai-liang-nian-wei-xin-hao-pi-fa-yi-shi-ming-chao-gao-quan-zhong-kang-tou-su-zhi-chi-rui-er-zhi-fu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月日本微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-ri-ben-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">日本一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/ri-ben-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">日本两年微信号出售 已实名 稳定耐用 抗封号 支持日元支付 带资料</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/ri-ben-liang-nian-wei-xin-hao-chu-shou-yi-shi-ming-wen-ding-nai-yong-kang-feng-hao-zhi-chi-ri-yuan-zhi-fu-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月韩国微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-han-guo-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">韩国一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/han-guo-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">韩国两年微信号批发 已实名 超高权重 抗投诉 支持韩元支付 可加好友</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/han-guo-liang-nian-wei-xin-hao-pi-fa-yi-shi-ming-chao-gao-quan-zhong-kang-tou-su-zhi-chi-han-yuan-zhi-fu-ke-jia-hao-you.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月缅甸微信号购买 已实名绑卡带资料 1000额度可收付款 可进大群</td>
+							<td class="product-price">$13.26</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-mian-dian-wei-xin-hao-gou-mai-yi-shi-ming-bang-ka-dai-zi-liao-1000-e-du-ke-shou-fu-kuan-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">缅甸一年老微信号购买 带圈带资料已实名绑卡可收付款 抗封耐用 稳定不异常</td>
+							<td class="product-price">$30.72</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/mian-dian-yi-nian-lao-wei-xin-hao-gou-mai-dai-quan-dai-zi-liao-yi-shi-ming-bang-ka-ke-shou-fu-kuan-kang-feng-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">缅甸两年微信号出售 已实名认证 稳定耐用 抗封号 支持支付 可加好友</td>
+							<td class="product-price">$36.25</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/mian-dian-liang-nian-wei-xin-hao-chu-shou-yi-shi-ming-ren-zheng-wen-ding-nai-yong-kang-feng-hao-zhi-chi-zhi-fu-ke-jia-hao-you.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">实名满月微信号购买 已绑卡带1000支付额度 24H在线自助购买自动发货</td>
+							<td class="product-price">$11.87</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/shi-ming-man-yue-wei-xin-hao-gou-mai-yi-bang-ka-dai-1000-zhi-fu-e-du-24H-zai-xian-zi-zhu-gou-mai-zi-dong-fa-huo.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">半年微信号批发 已实名 带圈带账单 稳定不异常</td>
+							<td class="product-price">$12.56</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/ban-nian-wei-xin-hao-pi-fa-yi-shi-ming-dai-quan-dai-zhang-dan-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">一年微信号购买 超高权重老号 带支付带资料 绝对稳定抗投诉</td>
+							<td class="product-price">$13.68</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/yi-nian-wei-xin-hao-gou-mai-chao-gao-quan-zhong-lao-hao-dai-zhi-fu-dai-zi-liao-jue-dui-wen-ding-kang-tou-su.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">两年微信号出售 已实名 超高权重 带支付带资料 绝对抗投诉</td>
+							<td class="product-price">$30.82</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/liang-nian-wei-xin-hao-chu-shou-yi-shi-ming-chao-gao-quan-zhong-dai-zhi-fu-dai-zi-liao-jue-dui-kang-tou-su.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月红标企业微信号批发 带资料 抗封耐用 在线自助购买</td>
+							<td class="product-price">$17.45</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/man-yue-hong-biao-qi-ye-wei-xin-hao-pi-fa-dai-zi-liao-kang-feng-nai-yong-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">半年红标企业微信号出售 带资料 自动发货 耐用稳定不异常</td>
+							<td class="product-price">$23.04</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/ban-nian-hong-biao-qi-ye-wei-xin-hao-chu-shou-dai-zi-liao-zi-dong-fa-huo-nai-yong-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">一年红标企业微信账号购买 带资料 在线自助购买自动发货稳定耐用</td>
+							<td class="product-price">$27.23</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/yi-nian-hong-biao-qi-ye-wei-xin-zhang-hao-gou-mai-dai-zi-liao-zai-xian-zi-zhu-gou-mai-zi-dong-fa-huo-wen-ding-nai-yong.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">三年微信号出售 已实名 超高权重 抗封抗投诉 可支付转账 带资料</td>
+							<td class="product-price">$40.63</td>
+							<td class="product-action"><a
+									href="https://www.iwa21.com/detail/san-nian-wei-xin-hao-chu-shou-yi-shi-ming-chao-gao-quan-zhong-kang-feng-kang-tou-su-ke-zhi-fu-zhuan-zhang-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<section class="platform-section wid-4">
+				<div class="platform-card">
+					<div class="platform-header">
+						<h2><a href="https://www.kroloffs.com" class="platform-name" target="_blank">克罗批发</a></h2>
+						<p class="platform-desc">购买微信号_微信小号出售_买微信号_实名微信号交易平台-克罗批发</p>
+						<div class="platform-tags">
+							<a href="https://www.kroloffs.com" class="tag-link">微信号购买</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信小号</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信号批发</a>
+							<a href="https://www.kroloffs.com" class="tag-link">买微信号</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信号出售</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信号交易平台</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信号平台</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信号购买自动发货</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信账号购买平台</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信号购买telegram</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信小号购买自动发货</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信号购买微信支付</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信小号自助购买</a>
+							<a href="https://www.kroloffs.com" class="tag-link">海外微信号购买</a>
+							<a href="https://www.kroloffs.com" class="tag-link">国内微信号购买</a>
+							<a href="https://www.kroloffs.com" class="tag-link">实名微信号购买</a>
+							<a href="https://www.kroloffs.com" class="tag-link">香港微信号购买</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信号购买平台</a>
+							<a href="https://www.kroloffs.com" class="tag-link">微信小号购买</a>
+							<a href="https://www.kroloffs.com" class="tag-link">未实名微信号购买</a>
+						</div>
+					</div>
+					<table class="products-table">
+						<tr class="product-row">
+							<td class="product-title">满月微信号购买 已实名 在线自助购买 自动发货 带实名资料</td>
+							<td class="product-price">$11.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/man-yue-wei-xin-hao-gou-mai-yi-shi-ming-zai-xian-zi-zhu-gou-mai-zi-dong-fa-huo-dai-shi-ming-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">三月微信号出售 已实名认证 带圈带账单 稳定不异常 抗封抗投诉 可进大群</td>
+							<td class="product-price">$12.52</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/san-yue-wei-xin-hao-chu-shou-yi-shi-ming-ren-zheng-dai-quan-dai-zhang-dan-wen-ding-bu-yi-chang-kang-feng-kang-tou-su-ke-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">半年微信号批发 抗封抗投诉 已实名认证 稳定耐用 可收付款 带实名资料</td>
+							<td class="product-price">$12.89</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ban-nian-wei-xin-hao-pi-fa-kang-feng-kang-tou-su-yi-shi-ming-ren-zheng-wen-ding-nai-yong-ke-shou-fu-kuan-dai-shi-ming-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">一年微信老号 稳定不异常 带账单带圈 抗投诉 已实名认证 带实名资料</td>
+							<td class="product-price">$13.70</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/yi-nian-wei-xin-lao-hao-wen-ding-bu-yi-chang-dai-zhang-dan-dai-quan-kang-tou-su-yi-shi-ming-ren-zheng-dai-shi-ming-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">两年实名微信号 超强抗封 带圈带资料 稳定耐用 可进大群 带实名资料</td>
+							<td class="product-price">$32.86</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/liang-nian-shi-ming-wei-xin-hao-chao-qiang-kang-feng-dai-quan-dai-zi-liao-wen-ding-nai-yong-ke-jin-da-qun-dai-shi-ming-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港满月微信号出售 实名微信号购买 抗封抗投诉 稳定不异常 在线自助购买平台</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/xiang-gang-man-yue-wei-xin-hao-chu-shou-shi-ming-wei-xin-hao-gou-mai-kang-feng-kang-tou-su-wen-ding-bu-yi-chang-zai-xian-zi-zhu-gou-mai-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港半年老微信号批发 微信号交易平台 稳定耐用可进大群 带资料 自动发货</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/xiang-gang-ban-nian-lao-wei-xin-hao-pi-fa-wei-xin-hao-jiao-yi-ping-tai-wen-ding-nai-yong-ke-jin-da-qun-dai-zi-liao-zi-dong-fa-huo.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港一年实名微信号购买 老号批发出售 抗投诉可加好友 稳定不异常 带圈带资料</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/xiang-gang-yi-nian-shi-ming-wei-xin-hao-gou-mai-lao-hao-pi-fa-chu-shou-kang-tou-su-ke-jia-hao-you-wen-ding-bu-yi-chang-dai-quan-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新加坡满月微信号购买 微信号出售自动发货 可进大群 带资料 稳定不异常</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/xin-jia-po-man-yue-wei-xin-hao-gou-mai-wei-xin-hao-chu-shou-zi-dong-fa-huo-ke-jin-da-qun-dai-zi-liao-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新加坡半年微信号批发 实名微信号交易平台 抗封抗投诉 稳定耐用 在线购买</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/xin-jia-po-ban-nian-wei-xin-hao-pi-fa-shi-ming-wei-xin-hao-jiao-yi-ping-tai-kang-feng-kang-tou-su-wen-ding-nai-yong-zai-xian-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新加坡一年老微信号出售 买微信号认准平台 抗投诉支持批发 带资料包登录</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/xin-jia-po-yi-nian-lao-wei-xin-hao-chu-shou-mai-wei-xin-hao-ren-zhun-ping-tai-kang-tou-su-zhi-chi-pi-fa-dai-zi-liao-bao-deng-lu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">马来西亚满月微信号出售 买微信号自动发货 可加好友 带资料 稳定不异常</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ma-lai-xi-ya-man-yue-wei-xin-hao-chu-shou-mai-wei-xin-hao-zi-dong-fa-huo-ke-jia-hao-you-dai-zi-liao-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">马来西亚半年微信号批发 实名微信号购买平台 抗封抗投诉 稳定耐用进大群</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ma-lai-xi-ya-ban-nian-wei-xin-hao-pi-fa-shi-ming-wei-xin-hao-gou-mai-ping-tai-kang-feng-kang-tou-su-wen-ding-nai-yong-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">马来西亚一年实名微信号 老号批发出售 抗投诉支持验证 带圈带资料</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ma-lai-xi-ya-yi-nian-shi-ming-wei-xin-hao-lao-hao-pi-fa-chu-shou-kang-tou-su-zhi-chi-yan-zheng-dai-quan-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">美国满月微信号购买 微信号出售自动发货 抗封抗投诉 可加好友 稳定不异常</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/mei-guo-man-yue-wei-xin-hao-gou-mai-wei-xin-hao-chu-shou-zi-dong-fa-huo-kang-feng-kang-tou-su-ke-jia-hao-you-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">美国半年微信号批发 实名微信号交易平台 稳定耐用可进大群 带资料 自助下单</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/mei-guo-ban-nian-wei-xin-hao-pi-fa-shi-ming-wei-xin-hao-jiao-yi-ping-tai-wen-ding-nai-yong-ke-jin-da-qun-dai-zi-liao-zi-zhu-xia-dan.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">美国一年老微信号出售 实名账号购买 抗投诉支持批发 带资料包登录</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/mei-guo-yi-nian-lao-wei-xin-hao-chu-shou-shi-ming-zhang-hao-gou-mai-kang-tou-su-zhi-chi-pi-fa-dai-zi-liao-bao-deng-lu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">加拿大满月微信号出售 买微信号自动发货 抗封抗投诉 带资料 稳定不异常</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/jia-na-da-man-yue-wei-xin-hao-chu-shou-mai-wei-xin-hao-zi-dong-fa-huo-kang-feng-kang-tou-su-dai-zi-liao-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">加拿大半年微信号批发 实名微信号购买平台 稳定耐用可进大群 在线自助购买</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/jia-na-da-ban-nian-wei-xin-hao-pi-fa-shi-ming-wei-xin-hao-gou-mai-ping-tai-wen-ding-nai-yong-ke-jin-da-qun-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">加拿大一年老微信号购买 微信号出售批发 抗投诉支持验证 带资料带圈</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/jia-na-da-yi-nian-lao-wei-xin-hao-gou-mai-wei-xin-hao-chu-shou-pi-fa-kang-tou-su-zhi-chi-yan-zheng-dai-zi-liao-dai-quan.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">澳大利亚满月微信号出售 实名微信号购买 抗封抗投诉 可进大群 自动发货平台</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ao-da-li-ya-man-yue-wei-xin-hao-chu-shou-shi-ming-wei-xin-hao-gou-mai-kang-feng-kang-tou-su-ke-jin-da-qun-zi-dong-fa-huo-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">澳大利亚半年微信号批发 微信号交易平台 稳定耐用不异常 带资料 在线自助购买</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ao-da-li-ya-ban-nian-wei-xin-hao-pi-fa-wei-xin-hao-jiao-yi-ping-tai-wen-ding-nai-yong-bu-yi-chang-dai-zi-liao-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">澳大利亚一年老微信号购买 微信号出售批发 抗投诉稳定 支持验证 带资料包登录</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ao-da-li-ya-yi-nian-lao-wei-xin-hao-gou-mai-wei-xin-hao-chu-shou-pi-fa-kang-tou-su-wen-ding-zhi-chi-yan-zheng-dai-zi-liao-bao-deng-lu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新西兰满月微信号购买 微信号出售自动发货 抗封抗投诉 带资料 稳定不异常</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/xin-xi-lan-man-yue-wei-xin-hao-gou-mai-wei-xin-hao-chu-shou-zi-dong-fa-huo-kang-feng-kang-tou-su-dai-zi-liao-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新西兰半年微信号批发 实名微信号交易平台 稳定耐用可进大群 在线自助购买</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/xin-xi-lan-ban-nian-wei-xin-hao-pi-fa-shi-ming-wei-xin-hao-jiao-yi-ping-tai-wen-ding-nai-yong-ke-jin-da-qun-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新西兰一年老微信号出售 买微信号认准平台 抗投诉支持批发 带资料包登录</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/xin-xi-lan-yi-nian-lao-wei-xin-hao-chu-shou-mai-wei-xin-hao-ren-zhun-ping-tai-kang-tou-su-zhi-chi-pi-fa-dai-zi-liao-bao-deng-lu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">泰国满月微信号出售 实名微信号购买 抗封抗投诉 可进大群 自动发货平台</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/tai-guo-man-yue-wei-xin-hao-chu-shou-shi-ming-wei-xin-hao-gou-mai-kang-feng-kang-tou-su-ke-jin-da-qun-zi-dong-fa-huo-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">泰国半年微信号批发 微信号交易平台 稳定耐用不异常 带资料 在线自助购买</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/tai-guo-ban-nian-wei-xin-hao-pi-fa-wei-xin-hao-jiao-yi-ping-tai-wen-ding-nai-yong-bu-yi-chang-dai-zi-liao-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">泰国一年老微信号购买 微信号出售批发 抗投诉稳定 支持验证 带资料包登录</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/tai-guo-yi-nian-lao-wei-xin-hao-gou-mai-wei-xin-hao-chu-shou-pi-fa-kang-tou-su-wen-ding-zhi-chi-yan-zheng-dai-zi-liao-bao-deng-lu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">柬埔寨满月微信号购买 微信号出售自动发货 可加好友进大群 带资料 稳定不异常</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/jian-pu-zhai-man-yue-wei-xin-hao-gou-mai-wei-xin-hao-chu-shou-zi-dong-fa-huo-ke-jia-hao-you-jin-da-qun-dai-zi-liao-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">柬埔寨半年微信号批发 实名微信号交易平台 抗封抗投诉 稳定耐用 自助下单</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/jian-pu-zhai-ban-nian-wei-xin-hao-pi-fa-shi-ming-wei-xin-hao-jiao-yi-ping-tai-kang-feng-kang-tou-su-wen-ding-nai-yong-zi-zhu-xia-dan.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">柬埔寨一年老微信号出售 买微信号认准平台 抗投诉支持批发 带资料包登录</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/jian-pu-zhai-yi-nian-lao-wei-xin-hao-chu-shou-mai-wei-xin-hao-ren-zhun-ping-tai-kang-tou-su-zhi-chi-pi-fa-dai-zi-liao-bao-deng-lu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">菲律宾满月微信号购买 微信号出售自动发货 抗封抗投诉 带资料 稳定不异常</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/fei-lv-bin-man-yue-wei-xin-hao-gou-mai-wei-xin-hao-chu-shou-zi-dong-fa-huo-kang-feng-kang-tou-su-dai-zi-liao-wen-ding-bu-yi-chang.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">菲律宾半年微信号批发 实名号交易平台 可加好友进大群 稳定耐用 自助下单</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/fei-lv-bin-ban-nian-wei-xin-hao-pi-fa-shi-ming-hao-jiao-yi-ping-tai-ke-jia-hao-you-jin-da-qun-wen-ding-nai-yong-zi-zhu-xia-dan.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">菲律宾一年老微信号出售 买微信号认准平台 抗投诉支持批发 带资料包登录</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/fei-lv-bin-yi-nian-lao-wei-xin-hao-chu-shou-mai-wei-xin-hao-ren-zhun-ping-tai-kang-tou-su-zhi-chi-pi-fa-dai-zi-liao-bao-deng-lu.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">澳门满月微信号购买 微信号出售平台 可加好友进大群 稳定不异常 自动发货</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ao-men-man-yue-wei-xin-hao-gou-mai-wei-xin-hao-chu-shou-ping-tai-ke-jia-hao-you-jin-da-qun-wen-ding-bu-yi-chang-zi-dong-fa-huo.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">澳门半年微信号批发 实名微信号交易 带资料包售后 抗封抗投诉 在线自助购买</td>
+							<td class="product-price">$18.88</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ao-men-ban-nian-wei-xin-hao-pi-fa-shi-ming-wei-xin-hao-jiao-yi-dai-zi-liao-bao-shou-hou-kang-feng-kang-tou-su-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">澳门一年老微信号出售 实名账号购买平台 抗投诉稳定耐用 支持批发 自助下单</td>
+							<td class="product-price">$30.76</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ao-men-yi-nian-lao-wei-xin-hao-chu-shou-shi-ming-zhang-hao-gou-mai-ping-tai-kang-tou-su-wen-ding-nai-yong-zhi-chi-pi-fa-zi-zhu-xia-dan.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">满月实名微信号购买 企业红标老号 稳定耐用可进大群 自动发货</td>
+							<td class="product-price">$17.48</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/man-yue-shi-ming-wei-xin-hao-gou-mai-qi-ye-hong-biao-lao-hao-wen-ding-nai-yong-ke-jin-da-qun-zi-dong-fa-huo.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">半年实名微信号出售 企业红标老号 抗封号可进大群 微信号交易平台</td>
+							<td class="product-price">$23.07</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/ban-nian-shi-ming-wei-xin-hao-chu-shou-qi-ye-hong-biao-lao-hao-kang-feng-hao-ke-jin-da-qun-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">一年实名微信号购买 顶级企业红标账号 超强抗投诉 支持批发 自动发货平台</td>
+							<td class="product-price">$27.27</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/yi-nian-shi-ming-wei-xin-hao-gou-mai-ding-ji-qi-ye-hong-biao-zhang-hao-chao-qiang-kang-tou-su-zhi-chi-pi-fa-zi-dong-fa-huo-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">微信号反查手机号姓名 实名信息查询 在线自助购买</td>
+							<td class="product-price">$13.28</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/wei-xin-hao-fan-cha-shou-ji.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">微信号查身份证号码 实名信息查询 在线自助购买</td>
+							<td class="product-price">$20.97</td>
+							<td class="product-action"><a
+									href="https://www.kroloffs.com/detail/wei-xin-hao-cha-xing-ming-shen-fen-zheng-hao-ma.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<section class="platform-section wid-5">
+				<div class="platform-card">
+					<div class="platform-header">
+						<h2><a href="https://www.jesu-ufo.com" class="platform-name" target="_blank">杰苏小号</a></h2>
+						<p class="platform-desc">专业微信号购买_微信小号_买微信号_微信号批发，支持自动发货-杰苏小号</p>
+						<div class="platform-tags">
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信号购买</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信小号</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信号批发</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">买微信号</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信号出售</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信号交易平台</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信号平台</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信号购买自动发货</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信账号购买平台</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信号购买telegram</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信小号购买自动发货</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信号购买微信支付</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信小号自助购买</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">海外微信号购买</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">国内微信号购买</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">实名微信号购买</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">香港微信号购买</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信号购买平台</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">微信小号购买</a>
+							<a href="https://www.jesu-ufo.com" class="tag-link">未实名微信号购买</a>
+						</div>
+					</div>
+					<table class="products-table">
+						<tr class="product-row">
+							<td class="product-title">满月微信号购买 抗封抗投诉 稳定耐用微信号出售 自动发货平台</td>
+							<td class="product-price">$11.97</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/man-yue-wei-xin-hao-gou-mai-kang-feng-kang-tou-su-wen-ding-nai-yong-wei-xin-hao-chu-shou-zi-dong-fa-huo-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">半年老微信号购买 超稳定抗封号 带实名可收付款 自动发货</td>
+							<td class="product-price">$12.67</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/ban-nian-lao-wei-xin-hao-gou-mai-chao-wen-ding-kang-feng-hao-dai-shi-ming-ke-shou-fu-kuan-zi-dong-fa-huo.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">一年实名微信号购买 超高权重老号 抗封抗投诉 带支付功能</td>
+							<td class="product-price">$13.80</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/yi-nian-shi-ming-wei-xin-hao-gou-mai-chao-gao-quan-zhong-lao-hao-kang-feng-kang-tou-su-dai-zhi-fu-gong-neng.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">两年超老微信号出售 终极抗封解决方案 全功能支持 自动发货</td>
+							<td class="product-price">$33.09</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/liang-nian-chao-lao-wei-xin-hao-chu-shou-zhong-ji-kang-feng-jie-jue-fang-an-quan-gong-neng-zhi-chi-zi-dong-fa-huo.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港满月微信号购买 抗封抗投诉 稳定耐用 自动发货 带圈带资料</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/xiang-gang-man-yue-wei-xin-hao-gou-mai-kang-feng-kang-tou-su-wen-ding-nai-yong-zi-dong-fa-huo-dai-quan-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港一年微信号出售 实名认证 稳定不异常 可加好友进大群 微信号交易平台</td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/xiang-gang-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-wen-ding-bu-yi-chang-ke-jia-hao-you-jin-da-qun-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">香港两年微信号批发 高权重老号 抗封抗投诉 微信号平台 在线自助购买</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/xiang-gang-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-kang-feng-kang-tou-su-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">越南满月微信号购买 稳定耐用 自动发货 带圈带资料 可加好友进大群</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/yue-nan-man-yue-wei-xin-hao-gou-mai-wen-ding-nai-yong-zi-dong-fa-huo-dai-quan-dai-zi-liao-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">越南一年微信号出售 实名认证 抗封抗投诉 稳定不异常 微信号交易平台</td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/yue-nan-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-kang-feng-kang-tou-su-wen-ding-bu-yi-chang-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">越南两年微信号批发 高权重老号 微信号平台 在线自助购买 可加好友进大群</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/yue-nan-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">缅甸满月微信号购买 抗封抗投诉 自动发货 稳定耐用 带圈带资料</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/mian-dian-man-yue-wei-xin-hao-gou-mai-kang-feng-kang-tou-su-zi-dong-fa-huo-wen-ding-nai-yong-dai-quan-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">缅甸一年微信号出售 实名认证 稳定不异常 可加好友进大群 微信号交易平台</td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/mian-dian-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-wen-ding-bu-yi-chang-ke-jia-hao-you-jin-da-qun-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">缅甸两年微信号批发 高权重老号 抗封抗投诉 微信号平台 在线自助购买</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/mian-dian-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-kang-feng-kang-tou-su-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">泰国满月微信号购买 稳定耐用 自动发货 带圈带资料 可加好友进大群</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/tai-guo-man-yue-wei-xin-hao-gou-mai-wen-ding-nai-yong-zi-dong-fa-huo-dai-quan-dai-zi-liao-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">泰国一年微信号出售 实名认证 抗封抗投诉 稳定不异常 微信号交易平台 </td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/tai-guo-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-kang-feng-kang-tou-su-wen-ding-bu-yi-chang-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">泰国两年微信号批发 高权重老号 微信号平台 在线自助购买 可加好友进大群</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/tai-guo-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">马来西亚满月微信号购买 抗封抗投诉 自动发货 稳定耐用 带圈带资料</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/ma-lai-xi-ya-man-yue-wei-xin-hao-gou-mai-kang-feng-kang-tou-su-zi-dong-fa-huo-wen-ding-nai-yong-dai-quan-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">马来西亚一年微信号出售 实名认证 稳定不异常 可加好友进大群 微信号交易平台</td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/ma-lai-xi-ya-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-wen-ding-bu-yi-chang-ke-jia-hao-you-jin-da-qun-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">马来西亚两年微信号批发 高权重老号 抗封抗投诉 微信号平台 在线自助购买</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/ma-lai-xi-ya-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-kang-feng-kang-tou-su-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新加坡满月微信号购买 稳定耐用 自动发货 带圈带资料 可加好友进大群</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/xin-jia-po-man-yue-wei-xin-hao-gou-mai-wen-ding-nai-yong-zi-dong-fa-huo-dai-quan-dai-zi-liao-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新加坡一年微信号出售 实名认证 抗封抗投诉 稳定不异常 微信号交易平台</td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/xin-jia-po-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-kang-feng-kang-tou-su-wen-ding-bu-yi-chang-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">新加坡两年微信号批发 高权重老号 微信号平台 在线自助购买 可加好友进大群</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/xin-jia-po-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">日本满月微信号购买 抗封抗投诉 自动发货 稳定耐用 带圈带资料</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/ri-ben-man-yue-wei-xin-hao-gou-mai-kang-feng-kang-tou-su-zi-dong-fa-huo-wen-ding-nai-yong-dai-quan-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">日本一年微信号出售 实名认证 稳定不异常 可加好友进大群 微信号交易平台 </td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/ri-ben-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-wen-ding-bu-yi-chang-ke-jia-hao-you-jin-da-qun-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">日本两年微信号批发 高权重老号 抗封抗投诉 微信号平台 在线自助购买</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/ri-ben-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-kang-feng-kang-tou-su-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">韩国满月微信号购买 稳定耐用 自动发货 带圈带资料 可加好友进大群</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/han-guo-man-yue-wei-xin-hao-gou-mai-wen-ding-nai-yong-zi-dong-fa-huo-dai-quan-dai-zi-liao-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">韩国一年微信号出售 实名认证 抗封抗投诉 稳定不异常 微信号交易平台</td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/han-guo-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-kang-feng-kang-tou-su-wen-ding-bu-yi-chang-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">韩国两年微信号批发 高权重老号 微信号平台 在线自助购买 可加好友进大群</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/han-guo-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">美国满月微信号购买 抗封抗投诉 自动发货 稳定耐用 带圈带资料</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/mei-guo-man-yue-wei-xin-hao-gou-mai-kang-feng-kang-tou-su-zi-dong-fa-huo-wen-ding-nai-yong-dai-quan-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">美国一年微信号出售 实名认证 稳定不异常 可加好友进大群 微信号交易平台</td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/mei-guo-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-wen-ding-bu-yi-chang-ke-jia-hao-you-jin-da-qun-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">美国两年微信号批发 高权重老号 抗封抗投诉 微信号平台 在线自助购买</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/mei-guo-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-kang-feng-kang-tou-su-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">加拿大满月微信号购买 稳定耐用 自动发货 带圈带资料 可加好友进大群 </td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/jia-na-da-man-yue-wei-xin-hao-gou-mai-wen-ding-nai-yong-zi-dong-fa-huo-dai-quan-dai-zi-liao-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">加拿大一年微信号出售 实名认证 抗封抗投诉 稳定不异常 微信号交易平台</td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/jia-na-da-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-kang-feng-kang-tou-su-wen-ding-bu-yi-chang-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">加拿大两年微信号批发 高权重老号 微信号平台 在线自助购买 可加好友进大群</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/jia-na-da-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">菲律宾满月微信号购买 抗封抗投诉 自动发货 稳定耐用 带圈带资料</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/fei-lyu-bin-man-yue-wei-xin-hao-gou-mai-kang-feng-kang-tou-su-zi-dong-fa-huo-wen-ding-nai-yong-dai-quan-dai-zi-liao.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">菲律宾一年微信号出售 实名认证 稳定不异常 可加好友进大群 微信号交易平台</td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/fei-lyu-bin-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-wen-ding-bu-yi-chang-ke-jia-hao-you-jin-da-qun-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">菲律宾两年微信号批发 高权重老号 抗封抗投诉 微信号平台 在线自助购买</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/fei-lyu-bin-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-kang-feng-kang-tou-su-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">柬埔寨满月微信号购买 稳定耐用 自动发货 带圈带资料 可加好友进大群</td>
+							<td class="product-price">$13.38</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/jian-pu-zhai-man-yue-wei-xin-hao-gou-mai-wen-ding-nai-yong-zi-dong-fa-huo-dai-quan-dai-zi-liao-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">柬埔寨一年微信号出售 实名认证 抗封抗投诉 稳定不异常 微信号交易平台 </td>
+							<td class="product-price">$30.98</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/jian-pu-zhai-yi-nian-wei-xin-hao-chu-shou-shi-ming-ren-zheng-kang-feng-kang-tou-su-wen-ding-bu-yi-chang-wei-xin-hao-jiao-yi-ping-tai.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+						<tr class="product-row">
+							<td class="product-title">柬埔寨两年微信号批发 高权重老号 微信号平台 在线自助购买 可加好友进大群</td>
+							<td class="product-price">$45.77</td>
+							<td class="product-action"><a
+									href="https://www.jesu-ufo.com/detail/jian-pu-zhai-liang-nian-wei-xin-hao-pi-fa-gao-quan-zhong-lao-hao-wei-xin-hao-ping-tai-zai-xian-zi-zhu-gou-mai-ke-jia-hao-you-jin-da-qun.html"
+									class="buy-btn" target="_blank">立即购买</a></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<footer>
+				<p>温馨提示：购买微信号请遵守相关法律法规，本页面仅供参考</p>
+				<p>© 2025 微信号购买平台推荐 - 所有价格仅供参考，实际价格以平台为准</p>
+			</footer>
+		</div>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			$('.filter-btn').click(function() {
+				$('.filter-btn').removeClass('active');
+				$(this).addClass('active');
+				var wid = parseInt($(this).attr('data-wid'));
+				if (wid === 0) {
+					$('.platform-section').show();
+				} else {
+					$('.platform-section').hide();
+					$('.platform-section.wid-' + wid).show();
+				}
+			});
+		</script>
+	</body>
+</html>
